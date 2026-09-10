@@ -9,8 +9,13 @@
     --white: rgb(235, 235, 235);
     --black: rgb(34, 36, 37);
     --mainBackground: rgb(37, 63, 136);
+
+    /*default font*/
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--white);
+
+    /*text shadow*/
+    --textShadow: 2px 1px 2px var(--black);
 }
 
 body {
@@ -36,11 +41,68 @@ main {
     box-shadow: inset 2px 2px 5px var(--white), inset -2px -2px 5px var(--black);
 }
 
+.header-class {
+    display: flex;
+    justify-content: space-between;
+}
+
 h1 {
     align-self: left;
     color: var(--white);
     text-shadow: 2px 1px 2px var(--black);
     font-size: 1.5rem;
+}
+
+.burger {
+    filter: drop-shadow(var(--textShadow));
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: var(--textShadow);
+}
+
+.bar {
+    content: "";
+    background: var(--white);
+    width: 20%;
+    height: 2px;
+    box-shadow: var(--textShadow);
+}
+
+h2 {
+    align-self: center;
+    text-shadow: var(--textShadow);
+    font-size: 4rem;
+}
+
+.hours-temp {
+    display: flex;
+    flex-direction: row;
+    opacity: .5;
+    text-shadow: var(--textShadow);
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.temp-h {
+    background: var(--mainBackground);
+    padding: .2rem .5rem;
+    border-inline: 3px solid white;
+    border-radius: .5rem;
+    text-align: center;   
+}
+
+h3 {
+    font-size: .8rem;
 }
 
 .data-container {
@@ -49,29 +111,23 @@ h1 {
 }
 
 .temperature {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 40%;
-    height: 2.5rem;
     border: 2px solid var(--white);
     padding: .3rem;
     border-radius: 1rem;
     background: var(--black);
     opacity: .5;
+    align-items: center;
 }
 
 .title {
-    position: absolute;
-    left: 18%;
-    top: -40%;
-    background:var(--mainBackground);
-    padding: 0 .2rem;
     font-size: .8rem;
 }
 
 .temp, .prob {
     font-weight: 800;
-    font-size: 1.5rem;
-    align-self: baseline;
     padding: 0 .5rem;
     align-items: center;
     justify-content: center;
