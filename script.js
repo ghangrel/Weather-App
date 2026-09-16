@@ -58,6 +58,34 @@ function renderHours(datosClima) {
     hoursContainer.innerHTML = htmlContent
 }
 
+// función para cambiar el fondo
+
+function changeBack(code) {
+    const mainElement = document.querySelector('main')
+    let imagenFondo = ''
+
+    switch (true) {
+        case (code === 0):
+            imagenFondo = 'url(img/soleado.jpg)'
+            break
+
+        case (code >= 1 && code <= 2):
+            imagenFondo = 'url(img/parcialmenteNublado.jpg)'
+            break
+
+        case (code >= 3 && code <=50):
+            imagenFondo = 'url(img/nublado.jpg)'
+            break
+
+        default:
+            imagenFondo = 'url(img/lluviaFuerte.jpg)'
+    }
+
+    if (mainElement) {
+        mainElement.style.backgroundImage = imagenFondo
+    }
+}
+
 
 // función principal, sustituir elementos html de manera dinámica
 async function main () {
@@ -68,6 +96,7 @@ async function main () {
         console.log(datosClima)
 
         renderHours(datosClima)
+        const code = datosClima.current.weather_code
 
         const ciudad = document.querySelector('h1')
         ciudad.textContent = coords.ciudad
@@ -84,6 +113,11 @@ async function main () {
         const lluvia = document.querySelector('.prob')
         const hora = ahora.getHours()
         lluvia.textContent = `${datosClima.hourly.precipitation_probability[hora]}%`
+
+        changeBack(code)
+
+        /*const code = datosClima.current.weather_code
+        console.log ('código de clima actual ', code)*/
 
     } catch (error) {
         console.error('Ocurrió un error: ', error.message)

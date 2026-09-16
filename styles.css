@@ -39,6 +39,7 @@ main {
     background-repeat: no-repeat;
     background-size:cover;
     box-shadow: inset 2px 2px 5px var(--white), inset -2px -2px 5px var(--black);
+    transition: background-image .5s ease-in-out;
 }
 
 .header-class {
