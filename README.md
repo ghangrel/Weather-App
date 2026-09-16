@@ -27,9 +27,10 @@ V1.0
     1.1
     - Implementamos línea de predicción del tiempo por horas.
 
-    PROXIMAMENTE
+    1.2
+    - La imagen de fondo cambia dependiendo del estado del día
 
-- La imagen de fondo cambia dependiendo del estado del día
+    PROXIMAMENTE
 
 v2.0
 - Añadimos el menú lateral y la funcionalidad de introducir la localidad que queremos ver, mediante el código postal.
