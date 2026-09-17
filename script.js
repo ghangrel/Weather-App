@@ -28,8 +28,17 @@ async function clima (lat, lon) {
 // función hora que se actualiza
 function actualizarReloj() {
     const ahora = new Date()
-    const hora = ahora.toLocaleTimeString( 'es-ES', { hour: '2-digit', minute: '2-digit'})
-    const dia = ahora.toLocaleDateString( 'es-ES', { day: '2-digit'})
+    const hora = ahora.toLocaleTimeString( 'es-ES', { hour: '2-digit', minute: '2-digit' })
+    const dia = ahora.toLocaleDateString( 'es-ES', { day: '2-digit' })
+    const mes = ahora.toLocaleDateString('es-ES', { month: 'long' })
+    const mesCap = mes.charAt(0).toUpperCase() + mes.slice(1)
+    const fecha = `${dia}/${mesCap}`
+
+    const timeElement = document.querySelector('.time')
+    const dateElement = document.querySelector('.date')
+
+    timeElement.textContent = hora
+    dateElement.textContent = fecha
 }
 
 
@@ -108,20 +117,24 @@ async function main () {
         const ciudad = document.querySelector('h1')
         ciudad.textContent = coords.ciudad
 
-        const date = document.querySelector('.date')
-        date.textContent = fecha
+        /*const date = document.querySelector('.date')
+        date.textContent = fecha*/
 
-        const time = document.querySelector('.time')
-        time.textContent = horaActual
+        /*const time = document.querySelector('.time')
+        time.textContent = horaActual*/
 
         const temp = document.querySelector('.temp')
         temp.textContent = `${datosClima.current.temperature_2m}°C`
 
         const lluvia = document.querySelector('.prob')
-        const hora = ahora.getHours()
+        const hora = new Date().getHours()
         lluvia.textContent = `${datosClima.hourly.precipitation_probability[hora]}%`
 
         changeBack(code)
+
+        actualizarReloj()
+        setInterval(actualizarReloj, 1000)
+
 
         /*const code = datosClima.current.weather_code
         console.log ('código de clima actual ', code)*/
