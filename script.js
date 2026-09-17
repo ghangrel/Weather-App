@@ -25,16 +25,24 @@ async function clima (lat, lon) {
     return await res.json()
 }
 
+// función hora que se actualiza
+function actualizarReloj() {
+    const ahora = new Date()
+    const hora = ahora.toLocaleTimeString( 'es-ES', { hour: '2-digit', minute: '2-digit'})
+    const dia = ahora.toLocaleDateString( 'es-ES', { day: '2-digit'})
+}
+
+
 // fecha y hora actuales (captura y conversión)
 
-const ahora = new Date()
+/*const ahora = new Date()
 const horaActual = ahora.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
 const dia = ahora.toLocaleDateString([], {day: '2-digit'})
 const mes = ahora.toLocaleDateString('es-ES', { month: 'long'})
 const mesCap = mes.charAt(0).toUpperCase() + mes.slice(1)
 const fecha = `${dia}/${mesCap}`
 console.log(horaActual)
-console.log(fecha)
+console.log(fecha)*/
 
 //función para la línea de 6 horas
 function renderHours(datosClima) {
@@ -85,7 +93,6 @@ function changeBack(code) {
         mainElement.style.backgroundImage = imagenFondo
     }
 }
-
 
 // función principal, sustituir elementos html de manera dinámica
 async function main () {
