@@ -51,6 +51,7 @@ main {
 .menu-class {
     position: absolute;
     width: 85%;
+    max-width: 360px;
     align-self: center;
     padding: .3rem .6rem;
     border-radius: 2rem;
