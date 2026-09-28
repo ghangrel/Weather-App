@@ -58,10 +58,19 @@ function procesarNuevoCp() {
     cp = nuevoCp
 }
 
-closeMenu.addEventListener('click', async () => {
+async function confirmarCambio() {
     procesarNuevoCp()
     await main()
     menu.classList.add('hidden')
+    cpInput.value = ''
+}
+
+closeMenu.addEventListener('click', confirmarCambio)
+
+cpInput.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') {
+        confirmarCambio()
+    }
 })
 
 
