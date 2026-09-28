@@ -43,8 +43,31 @@ main {
 }
 
 .header-class {
+    position: relative;
     display: flex;
     justify-content: space-between;
+}
+
+.menu-class {
+    position: absolute;
+    width: 85%;
+    align-self: center;
+    padding: .3rem .6rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    background: var(--white);
+}
+
+.input-cp {
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.input-cp:focus {
+    outline: none;
 }
 
 h1 {
@@ -54,7 +77,7 @@ h1 {
     font-size: 1.5rem;
 }
 
-.burger {
+.burger, .close {
     filter: drop-shadow(var(--textShadow));
     cursor: pointer;
 }
@@ -132,4 +155,8 @@ h3 {
     padding: 0 .5rem;
     align-items: center;
     justify-content: center;
+}
+
+.hidden {
+    display: none;
 }

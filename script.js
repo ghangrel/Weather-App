@@ -1,5 +1,5 @@
 //variables de entrada
-const cp = '39001'
+let cp = '39001'
 const pais = 'ES'
 
 //servicios / apis (datos)
@@ -41,17 +41,29 @@ function actualizarReloj() {
     dateElement.textContent = fecha
 }
 
+// función botón menu y botón cierre
+const openMenu = document.querySelector('.burger')
+const closeMenu = document.querySelector('.close')
+const menu = document.querySelector('.menu-class')
+const cpInput = document.querySelector('.input-cp')
 
-// fecha y hora actuales (captura y conversión)
+openMenu.addEventListener('click', () => {
+    menu.classList.remove('hidden')
+    cpInput.focus()
+})
 
-/*const ahora = new Date()
-const horaActual = ahora.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-const dia = ahora.toLocaleDateString([], {day: '2-digit'})
-const mes = ahora.toLocaleDateString('es-ES', { month: 'long'})
-const mesCap = mes.charAt(0).toUpperCase() + mes.slice(1)
-const fecha = `${dia}/${mesCap}`
-console.log(horaActual)
-console.log(fecha)*/
+//introducimos el cp con con un input
+function procesarNuevoCp() {
+    const nuevoCp = cpInput.value.trim() 
+    cp = nuevoCp
+}
+
+closeMenu.addEventListener('click', async () => {
+    procesarNuevoCp()
+    await main()
+    menu.classList.add('hidden')
+})
+
 
 //función para la línea de 6 horas
 function renderHours(datosClima) {
