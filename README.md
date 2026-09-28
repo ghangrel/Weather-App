@@ -30,6 +30,12 @@ V1.0
     1.2
     - La imagen de fondo cambia dependiendo del estado del día
 
+    1.3
+    - Hora y fecha se actualizan en tiempo real
+
+    1.4
+    - Actualizado logo menú
+
     PROXIMAMENTE
 
 v2.0
@@ -39,10 +45,10 @@ v2.0
     - reconocemos la localidad por nombre.
 
 V3.0
-- Animaciones para los fondos.
-
-V4.0
 - Cambiamos la línea de horas por un carrousell de 24 horas.
 
-V5.0
+V4.0
 - Versión para escritorio.
+
+Pendiente de revisión
+- Animaiones y audio para fondo
