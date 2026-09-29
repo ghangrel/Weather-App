@@ -36,10 +36,10 @@ V1.0
     1.4
     - Actualizado logo menú
 
-    PROXIMAMENTE
-
 v2.0
 - Añadimos el menú lateral y la funcionalidad de introducir la localidad que queremos ver, mediante el código postal.
+
+    PROXIMAMENTE
 
     2.5
     - reconocemos la localidad por nombre.
