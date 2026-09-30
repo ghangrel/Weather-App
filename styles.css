@@ -38,6 +38,7 @@ main {
     background-image: url(img/soleado.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    background-origin: center;
     box-shadow: inset 2px 2px 5px var(--white), inset -2px -2px 5px var(--black);
     transition: background-image .5s ease-in-out;
 }
@@ -165,5 +166,6 @@ h3 {
 @media (min-width: 650px) {
     main {
         max-width: 100%;
+
     }
 }

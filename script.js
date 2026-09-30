@@ -102,27 +102,32 @@ function changeBack(code) {
     const mainElement = document.querySelector('main')
     let imagenFondo = ''
 
+    const escritorio = window.innerWidth >= 650
+    const sufijo = escritorio ? '-wide.jpg' : '.jpg'
+
     switch (true) {
         case (code === 0):
-            imagenFondo = 'url(img/soleado.jpg)'
+            imagenFondo = 'soleado'
             break
 
         case (code >= 1 && code <= 2):
-            imagenFondo = 'url(img/parcialmenteNublado.jpg)'
+            imagenFondo = 'parcialmenteNublado'
             break
 
         case (code >= 3 && code <=50):
-            imagenFondo = 'url(img/nublado.jpg)'
+            imagenFondo = 'nublado'
             break
 
         default:
-            imagenFondo = 'url(img/lluviaFuerte.jpg)'
+            imagenFondo = 'lluviaFuerte'
     }
 
-    if (mainElement) {
-        mainElement.style.backgroundImage = imagenFondo
-    }
+    mainElement.style.backgroundImage = `url(img/${imagenFondo}${sufijo})`
 }
+
+window.addEventListener('resize', () => {
+    changeBack()
+})
 
 // función principal, sustituir elementos html de manera dinámica
 async function main () {
