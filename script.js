@@ -106,28 +106,25 @@ function renderHours(datosClima) {
 
 function changeBack(code) {
     const mainElement = document.querySelector('main')
+    if (!mainElement || code === undefined || code === null) return
+
     let imagenFondo = ''
 
-    switch (true) {
-        case (code === 0):
-            imagenFondo = 'url(./img/soleado.jpg)'
-            break
-
-        case (code >= 1 && code <= 2):
-            imagenFondo = 'url(./img/parcialmenteNublado.jpg)'
-            break
-
-        case (code >= 3 && code <=50):
-            imagenFondo = 'url(./img/nublado.jpg)'
-            break
-
-        default:
-            imagenFondo = 'url(./img/lluviaFuerte.jpg)'
+    // Mapeo preciso según códigos WMO de Open-Meteo
+    if (code === 0) {
+        imagenFondo = 'url(./img/soleado.jpg)'
+    } else if (code >= 1 && code <= 2) {
+        imagenFondo = 'url(./img/parcialmenteNublado.jpg)'
+    } else if (code === 3 || (code >= 45 && code <= 48)) {
+        imagenFondo = 'url(./img/nublado.jpg)'
+    } else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 99)) {
+        imagenFondo = 'url(./img/lluviaFuerte.jpg)'
+    } else {
+        // Fallback por defecto si no encaja en los anteriores (ej. despejado)
+        imagenFondo = 'url(./img/soleado.jpg)'
     }
 
-    if (mainElement) {
-        mainElement.style.backgroundImage = imagenFondo
-    }
+    mainElement.style.backgroundImage = imagenFondo
 }
 
 // función principal, sustituir elementos html de manera dinámica
