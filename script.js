@@ -59,8 +59,14 @@ function procesarNuevoCp() {
 }
 
 async function confirmarCambio() {
-    procesarNuevoCp()
-    await main()
+    const nuevoCp = cpInput.value.trim()
+    
+    // Solo ejecutamos si el usuario ha escrito algo y es diferente al CP actual
+    if (nuevoCp && nuevoCp !== cp) {
+        cp = nuevoCp
+        await main()
+    }
+    
     menu.classList.add('hidden')
     cpInput.value = ''
 }
@@ -104,19 +110,19 @@ function changeBack(code) {
 
     switch (true) {
         case (code === 0):
-            imagenFondo = 'url(img/soleado.jpg)'
+            imagenFondo = 'url(./img/soleado.jpg)'
             break
 
         case (code >= 1 && code <= 2):
-            imagenFondo = 'url(img/parcialmenteNublado.jpg)'
+            imagenFondo = 'url(./img/parcialmenteNublado.jpg)'
             break
 
         case (code >= 3 && code <=50):
-            imagenFondo = 'url(img/nublado.jpg)'
+            imagenFondo = 'url(./img/nublado.jpg)'
             break
 
         default:
-            imagenFondo = 'url(img/lluviaFuerte.jpg)'
+            imagenFondo = 'url(./img/lluviaFuerte.jpg)'
     }
 
     if (mainElement) {
@@ -153,10 +159,6 @@ async function main () {
 
         changeBack(code)
 
-        actualizarReloj()
-        setInterval(actualizarReloj, 1000)
-
-
         /*const code = datosClima.current.weather_code
         console.log ('código de clima actual ', code)*/
 
@@ -164,5 +166,8 @@ async function main () {
         console.error('Ocurrió un error: ', error.message)
     }
 }
+
+actualizarReloj()
+setInterval(actualizarReloj, 1000)
 
 main()
