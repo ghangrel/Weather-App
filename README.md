@@ -39,6 +39,9 @@ V1.0
 v2.0
 - Añadimos el menú lateral y la funcionalidad de introducir la localidad que queremos ver, mediante el código postal.
 
+    2.1
+    - Imágenes para la versión de escritorio
+
     PROXIMAMENTE
 
     2.5
@@ -46,9 +49,6 @@ v2.0
 
 V3.0
 - Cambiamos la línea de horas por un carrousell de 24 horas.
-
-V4.0
-- Versión para escritorio.
 
 Pendiente de revisión
 - Animaiones y audio para fondo

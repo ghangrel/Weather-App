@@ -166,6 +166,37 @@ h3 {
 @media (min-width: 650px) {
     main {
         max-width: 100%;
+    }
 
+    .header-class {
+        display: flex;
+
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .burger, .close {
+        display: none;
+    }
+
+    .menu-class {
+        position: relative;
+        display: flex;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    .bar {
+        display: none;
+    }
+
+    .hero-bar {
+        display: flex;
+        flex-direction: column;
     }
 }
