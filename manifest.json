@@ -1,0 +1,20 @@
+{
+  "short_name": "Tiempo",
+  "name": "Aplicación del Tiempo",
+  "icons": [
+    {
+      "src": "img/icons/Android-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/Android-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "theme_color": "#2166B3",
+  "display": "standalone"
+}
